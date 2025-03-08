@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
-import Event from "@/models/event"; // Ensure Event model is correct!
+import Event from "@/models/Event"; // Ensure Event model is correct!
 
 export async function GET() {
     try {
