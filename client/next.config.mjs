@@ -37,7 +37,6 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
-    appDir: true, // Ensures the App Router is enabled
   },
 }
 
