@@ -7,12 +7,13 @@ export default function Home() {
       <Header />
       <div className="container px-4 py-8 mx-auto">
         <h1 className="text-4xl font-bold text-center mb-2 text-slate-800 dark:text-slate-100">
-          Site
+          Upcoming Events
         </h1>
         <p className="text-center mb-10 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          Info
+          Stay updated with all the events happening around campus. Never miss an opportunity to learn,
+          network, and have fun!
         </p>
-        <EventsShowcase/>
+        <EventsShowcase />
       </div>
     </main>
   )
