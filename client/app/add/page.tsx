@@ -53,7 +53,7 @@ export default function AddEventPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch("${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events", {
+      const response = await fetch("https://server-2cc7o77gm-aryan-s-projects-003d6608.vercel.app/api/events", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(eventData),
