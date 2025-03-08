@@ -9,9 +9,9 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "https://client-blond-iota.vercel.app/", // Allow only your deployed frontend
+  origin: "https://client-blond-iota.vercel.app", // Allow your deployed frontend
   methods: "GET,POST,PUT,DELETE",
-  credentials: true
+  credentials: true // Allow cookies, tokens, etc.
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // Parses form data
