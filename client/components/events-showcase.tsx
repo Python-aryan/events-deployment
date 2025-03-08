@@ -158,7 +158,7 @@ export default function EventsShowcase() {
   useEffect(() => {
     const loadEvents = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/events");
+        const response = await fetch("${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events");
         if (!response.ok) throw new Error("Failed to fetch events");
 
         const fetchedEvents = await response.json();
@@ -194,7 +194,7 @@ export default function EventsShowcase() {
             likedStatuses[event._id] = likeStatus === "true";
 
             try {
-              const response = await fetch(`http://localhost:5000/api/events/${event._id}/like`);
+              const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events/${event._id}/like`);
               if (response.ok) {
                 const data = await response.json();
                 likeCounts[event._id] = data.likes;
@@ -248,7 +248,7 @@ export default function EventsShowcase() {
     try {
       console.log("Liking event with ID:", eventId); // Debug log
 
-      const response = await fetch(`http://localhost:5000/api/events/${eventId}/like`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events/${eventId}/like`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ visitorId }),
@@ -336,7 +336,7 @@ export default function EventsShowcase() {
 
       const token = await user.getIdToken();
 
-      const response = await fetch(`http://localhost:5000/api/events/${eventId}/comment`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events/${eventId}/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -374,7 +374,7 @@ export default function EventsShowcase() {
     try {
       console.log("📌 Fetching comments for event ID:", eventId);
 
-      const response = await fetch(`http://localhost:5000/api/events/${eventId}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events/${eventId}`);
       if (!response.ok) {
         throw new Error(`Failed to fetch comments: ${response.statusText}`);
       }
